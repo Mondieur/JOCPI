@@ -1,0 +1,26 @@
+server: # server properties
+  port: 9090
+
+spring: # spring properties
+  #security: # Security
+    #user:
+      #name: Casanova
+      #password: 123
+  
+  datasource: # datasource properties
+    username: postgres
+    password: 1234
+    url: jdbc:postgresql://localhost:5432/social_media_system
+    driver-class-name: org.postgresql.Driver
+
+  jpa: # hibernate properties
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        
+    
+# custom: # custom properties
+# welcome: Welcome to this Spring Project
