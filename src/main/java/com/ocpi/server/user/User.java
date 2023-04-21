@@ -5,6 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.*;
+import org.springframework.stereotype.Component;
 
 import static jakarta.persistence.GenerationType.IDENTITY;
 
@@ -15,19 +16,19 @@ import static jakarta.persistence.GenerationType.UUID;
 @Entity
 @Builder
 @ToString
+@Component
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "users")
 @EqualsAndHashCode(of = "id")
 public class User {
-    
-    // @Id
-    // @GeneratedValue(strategy = UUID)
-    // private UUID uuid;
 
-    @Id
-    @GeneratedValue(strategy = IDENTITY)
-    private int id;
+    /*
+        @Id
+        @GeneratedValue(strategy = UUID) private UUID uuid;
+    */
+
+    @Id @GeneratedValue(strategy = IDENTITY) private int id;
     private String name;
     private String email;
     private String password;
