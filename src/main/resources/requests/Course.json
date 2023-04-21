@@ -4,10 +4,9 @@
   "summary": "Hello World! This course is all about C Programming Language",
   "instructor": "John Doe",
   "price": 100.00,
-  "totalSections": 10,
-  "totalLessons": 10,
-  "totalStudents": 20,
-  "isActive": true,
-  "hasCertification": true,
-  "hasFeedback": false
+  "numSections": 10,
+  "numLectures": 10,
+  "numStudents": 20,
+  "isPublic": true,
+  "hasCertificate": true
 }
