@@ -7,14 +7,12 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.NaturalId;
 
-import java.sql.Time;
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class CourseDetail {
+public class Course {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -22,13 +20,12 @@ public class CourseDetail {
     private String title;
     private String summary;
     private String instructor;
-    private float price;
+    private long price;
 
+    private int numSections;
+    private int numLectures;
+    private int numStudents;
 
-    private int numberOfSections;
-    private int numberOfLectures;
-    private int numberOfStudents;
-
-    private boolean isActive;
+    private boolean isPublic;
     private boolean hasCertificate;
 }
