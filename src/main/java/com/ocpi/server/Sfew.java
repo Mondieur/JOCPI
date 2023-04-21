@@ -1,8 +1,14 @@
 package com.ocpi.server;
 
-public interface Sfek {
-    Object save(Object obj);
-    Object find(int id);
-    Object edit(int id);
-    Object kill(int id);
+import org.springframework.stereotype.Component;
+
+import java.util.List;
+@Component
+public interface Sfew {
+    void save(Object obj);    // create
+    Object find(int id);        // read
+    Object edit(Object obj);    // update
+    void wipe(int id);        // delete
+
+    List<Object> findAll(); // all objects
 }
