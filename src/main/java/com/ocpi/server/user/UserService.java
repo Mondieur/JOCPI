@@ -1,8 +1,6 @@
 package com.ocpi.server.user;
 
-import com.ocpi.server.utensils.Log;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
@@ -14,7 +12,7 @@ public record UserService(UserRepo repo) {
     
     public String saveUser(User user) {
         repo.save(user);
-        return Log.done("saveUser() successfully!");
+        return "saveUser() successfully!";
     }
     
     public List<User> findUsers() {
@@ -24,7 +22,7 @@ public record UserService(UserRepo repo) {
     public String editById(User user) {
         
         User older = repo.findById(user.getId()), newer;
-        if (older == null) return Log.warn("editById");
+        if (older == null) return "editById";
         
         newer = User.builder()
                 .id(user.getId())
@@ -34,11 +32,11 @@ public record UserService(UserRepo repo) {
                 .build();
         
         repo.save(newer);
-        return Log.done("editById() successfully!");
+        return "editById() successfully!";
     }
     
-    public String deleteById(int id) {
+    public String killById(int id) {
         repo.deleteById(id);
-        return Log.done("deleteById() successfully!");
+        return "deleteById() successfully!";
     }
 }
