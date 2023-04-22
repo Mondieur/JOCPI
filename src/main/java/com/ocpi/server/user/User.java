@@ -19,7 +19,7 @@ import static jakarta.persistence.GenerationType.UUID;
 @Component
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "users")
+@Table(name = "end-users")
 @EqualsAndHashCode(of = "id")
 public class User {
 
