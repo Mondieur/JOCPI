@@ -1,12 +1,39 @@
+/**
+ * numSections
+ * numLectures
+ * numStudents
+ * numHours -> (Sections, Lectures)
+ * dob -> (Course)
+ */
+
 {
   "id": 1,
+  "dob": "1990-01-01",
+  "instructor": "John Doe",
   "title": "The C Programming Language",
   "summary": "Hello World! This course is all about C Programming Language",
-  "instructor": "John Doe",
   "price": 100.00,
   "isPublic": true,
-  "numSections": 10,
-  "numLectures": 10,
-  "numStudents": 20,
-  "hasCertificate": true
+  "hasSource": true,
+  "hasCertificate": true,
+  "sections": [
+    {
+      "id": 1,
+      "title": "A Tutorial Introduction",
+      "lectures": [
+        {
+          "id": 1,
+          "title": "Getting Started",
+          "numHours": "01:30:45.500",
+          "videoFilePath": "C://"
+        },
+        {
+          "id": 2,
+          "title": "Variables and Arithmetic Expressions",
+          "numHours": "01:00:00.000",
+          "videoFilePath": "C://"
+        }
+      ]
+    }
+  ]
 }
