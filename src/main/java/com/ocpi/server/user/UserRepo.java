@@ -10,5 +10,4 @@ import java.util.UUID;
 public interface UserRepo extends JpaRepository<User, UUID> {
     User findById(int id);
     void deleteById(int id);
-    List<User> findAllByName();
 }
