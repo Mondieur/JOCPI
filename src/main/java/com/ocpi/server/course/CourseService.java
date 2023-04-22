@@ -34,7 +34,7 @@ public record CourseService(CourseRepo repo) {
                 .build();
 
         repo.save(newer);
-        return "editById() successfully!";
+        return "editById() worked!";
     }
 
     public void wipe(int id) {
