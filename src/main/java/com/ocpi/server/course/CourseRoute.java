@@ -1,6 +1,5 @@
 package com.ocpi.server.course;
 
-
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;

@@ -3,7 +3,6 @@ package com.ocpi.server.course;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.stereotype.Component;
-
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
