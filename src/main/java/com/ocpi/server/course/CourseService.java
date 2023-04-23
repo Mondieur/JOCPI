@@ -1,15 +1,17 @@
 package com.ocpi.server.course;
 
-import com.ocpi.server.user.User;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public record CourseService(CourseRepo repo) {
 
-    public void save(Course obj) {
+    public Course save(Course obj) {
         repo.save(obj);
+        return obj;
     }
 
     public Course find(int id) {
