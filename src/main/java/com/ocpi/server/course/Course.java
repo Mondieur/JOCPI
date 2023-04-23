@@ -1,10 +1,12 @@
 package com.ocpi.server.course;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.stereotype.Component;
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 @Data
 @Entity
@@ -21,10 +23,12 @@ public class Course {
     private int id;
 
     @Column(name = "created_at", nullable = false, updatable = false)
-    private LocalDateTime dob; // date of birth
+    @JsonSerialize
+    @JsonDeserialize
+    private Date dob; // date of birth
 
     @Column(name = "updated_at")
-    private LocalDateTime dou; // date of update
+    private Date dou; // date of update
 
     @Column(name = "title", nullable = false, length = 255)
     private String title;
