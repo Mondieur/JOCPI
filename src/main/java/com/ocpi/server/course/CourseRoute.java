@@ -18,12 +18,13 @@ public class CourseRoute {
     private final CourseService service;
 
     @PostMapping
-    public ResponseEntity save(@Validated @RequestBody Object obj) {
+    public ResponseEntity save(@RequestBody Course obj) {
+        service.save(obj);
         return ResponseEntity.status(HttpStatus.CREATED).body(obj);
     }
 
     @GetMapping("/{id}")
-    public Object find(@PathVariable int id) {
+    public Course find(@PathVariable int id) {
         return service.find(id);
     }
 
