@@ -23,8 +23,6 @@ public class Course {
     private int id;
 
     @Column(name = "created_at", nullable = false, updatable = false)
-    @JsonSerialize
-    @JsonDeserialize
     private Date dob; // date of birth
 
     @Column(name = "updated_at")
