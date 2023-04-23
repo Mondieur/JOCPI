@@ -1,7 +1,10 @@
 package com.ocpi.server.course;
 
 import com.ocpi.server.Sfew;
+import com.ocpi.server.user.User;
 import lombok.AllArgsConstructor;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -9,6 +12,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/course")
 @AllArgsConstructor
+@CrossOrigin(origins = "http://localhost:9090")
 public class CourseRoute {
 
     private final CourseService service;
@@ -34,9 +38,15 @@ public class CourseRoute {
         System.out.println("deleted" + id);
     }
 
-    @GetMapping("/all")
-    public List<Object> findAll() {
-        System.out.println("works!");
-        return null;
+    @GetMapping(name = "", value = {}, path = "/all", params = {}, headers = {}, consumes = {}, produces = {})
+    public ResponseEntity<List<Object>> findAll() {
+        List courses = service.findAll();
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("Cache-Control", "max-age=3600");
+
+        System.out.println("courses (none):" + courses);
+        System.out.println("headers (attr):" + headers);
+
+        return ResponseEntity.ok().headers(headers).body(courses);
     }
 }
